@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://btu27xohgix3y"]
+
+[ext_resource type="Texture2D" uid="uid://d3hg12ha3y0ig" path="res://assets/TeamGunner_By_SecretHideout_060519/EXTRAS/Platform.png" id="1_2yq4e"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kq1tw"]
+size = Vector2(1168, 30)
+
+[node name="Ground" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(575.5, 0)
+scale = Vector2(36.9688, 1)
+texture = ExtResource("1_2yq4e")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(574, 0)
+shape = SubResource("RectangleShape2D_kq1tw")

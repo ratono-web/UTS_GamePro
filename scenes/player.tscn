@@ -1,0 +1,74 @@
+[gd_scene load_steps=11 format=3 uid="uid://dp2fqt4yxjy8j"]
+
+[ext_resource type="Script" path="res://scripts/player.gd" id="1_iiivq"]
+[ext_resource type="Texture2D" uid="uid://ditv2icq1jt8s" path="res://assets/TeamGunner_By_SecretHideout_060519/CHARACTER_SPRITES/Blue/Gunner_Blue_Run.png" id="1_kuofp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_httl1"]
+size = Vector2(20, 35)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wcdwg"]
+atlas = ExtResource("1_kuofp")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m03iw"]
+atlas = ExtResource("1_kuofp")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3va48"]
+atlas = ExtResource("1_kuofp")
+region = Rect2(96, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r6srd"]
+atlas = ExtResource("1_kuofp")
+region = Rect2(144, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y6kpc"]
+atlas = ExtResource("1_kuofp")
+region = Rect2(192, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fw6v5"]
+atlas = ExtResource("1_kuofp")
+region = Rect2(240, 0, 48, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_lq34t"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wcdwg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m03iw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3va48")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r6srd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y6kpc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fw6v5")
+}],
+"loop": true,
+"name": &"run",
+"speed": 6.0
+}]
+
+[node name="Player" type="CharacterBody2D"]
+scale = Vector2(3, 3)
+script = ExtResource("1_iiivq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -3)
+shape = SubResource("RectangleShape2D_httl1")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_lq34t")
+animation = &"run"
+autoplay = "run"
+frame_progress = 0.405257
+
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(16.3333, -3.66667)
