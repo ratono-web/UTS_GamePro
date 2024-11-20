@@ -32,3 +32,8 @@ func shoot():
 		b = bullet.instantiate()
 		get_parent().add_child(b)
 		b.global_position = $Marker2D.global_position
+
+
+func _on_button_pressed() -> void:
+	get_tree().paused = false
+	get_tree().reload_current_scene()
